@@ -1,0 +1,74 @@
+public class Solution {
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    public static long lcm(long a, long b) {
+        return a / gcd((int) a, (int) b) * b;
+    }
+
+    public int maxLength(int[] nums) {
+        int n = nums.length;
+        int maxLen = 0;
+        for (int i = 0; i < n; i++) {
+            long prod = 1;
+            int currGCD = 0;
+            long currLCM = 1;
+            for (int j = i; j < n; j++) {
+                prod *= nums[j];
+                if (prod > 1e18) break;
+                currGCD = (j == i) ? nums[j] : gcd(currGCD, nums[j]);
+                currLCM = (j == i) ? nums[j] : lcm(currLCM, nums[j]);
+                if (prod == currGCD * currLCM) {
+                    maxLen = Math.max(maxLen, j - i + 1);
+                }
+            }
+        }
+        return maxLen;
+    }
+}
+
+
+class Solution {
+    public int gcd(int a, int b) {
+        if (b == 0)
+            return a;
+        return gcd(b, a % b);
+    }
+
+    public int findGCD(int[] nums) {
+        int min = nums[0];
+        int max = nums[0];
+        for (int num : nums) {
+            if (num < min)
+                min = num;
+            if (num > max)
+                max = num;
+        }
+        return gcd(min, max);
+    }
+}
+
+
+class Solution {
+    public boolean checkSubarraySum(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (k != 0)
+                sum %= k;
+
+            if (map.containsKey(sum)) {
+                if (i - map.get(sum) > 1)
+                    return true;
+            } else {
+                map.put(sum, i);
+            }
+        }
+        return false;
+    }
+}
