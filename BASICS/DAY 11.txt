@@ -1,0 +1,96 @@
+import java.util.*;
+public class pattern {
+    public static void printPattern(int n)
+    {
+        int i, j;
+        for (i = 0; i < n; i++) {
+            for (j = n - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String args[])
+    {
+        int n = 5;
+        printPattern(n);
+    }
+}
+
+
+output:
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+
+import java.util.Scanner;
+
+public class ShorthandExpander {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        String input = sc.nextLine();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i += 2) {
+            char ch = input.charAt(i); 
+            char countChar = input.charAt(i + 1); 
+
+            int count = Character.getNumericValue(countChar);
+
+            for (int j = 0; j < count; j++) {
+                result.append(ch);
+            }
+        }
+
+        System.out.println(result.toString());
+
+        sc.close();
+    }
+}
+
+
+import java.util.*;
+
+public class Hello {
+    public static boolean isAnagram(String word1, String word2) {
+        if (word1.length() != word2.length()) return false;
+
+        char[] arr1 = word1.toCharArray();
+        char[] arr2 = word2.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        return Arrays.equals(arr1, arr2);  
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S1 = sc.nextLine();
+        String S2 = sc.nextLine();
+
+        String[] words1 = S1.split(" ");
+        String[] words2 = S2.split(" ");  
+        int count = 0;
+        for (String w1 : words1) {
+            for (String w2 : words2) {
+                if (isAnagram(w1, w2)) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println(count);
+    }
+}
+
+
