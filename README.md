@@ -1,7 +1,7 @@
 # DSA Basics
 
 This repository documents my journey through **Data Structures and Algorithms (DSA)**.  
-I upload daily practice problems, notes, and solutions in PDF format as I master each concept.
+I upload daily practice problems, notes, and solutions as I master each concept.
 
 ---
 
@@ -41,7 +41,7 @@ I aim to expand this into a comprehensive learning resource as I progress throug
 
 ## About Me
 
-**Sriyazhini P G** – IT student interested in Java, JavaScript, frontend development, and Power BI.  
+**Sriyazhini P G** – IT student interested in Java,Frontend development, and Power BI.  
 I’m driven by building user-focused projects and improving analytical skills through DSA.  
 
 - **GitHub:** [github.com/sriyazhini02](https://github.com/sriyazhini02)  
